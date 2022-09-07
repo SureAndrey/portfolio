@@ -6,11 +6,16 @@
 }
 
 :root {
-  --margin: 25px 0;
+  --margin-h: 25px 0;
+  --margin-v: 0 25px;
+  --margin-h-v: 25px;
   --margin-auto: 25px auto;
+
+  --padding: 25px;
 
   --border: 1px solid #4d1616;
   --border-radius: 10px;
+  --border-radius-small: 5px;
 
   --font: 15px;
   --font-color: #f8f8f2;
@@ -20,23 +25,23 @@
 }
 
 body {
+  color: var(--font-color);
   width: 720px;
   margin: 0 auto;
-  color: var(--font-color);
   background-color: var(--background-bottom);
 }
 
-#titulo    {margin:    var(--margin);}
-#titulo h2 {font-size: var(--font); color: #ff0852;}
-#biography {font-size: var(--font); margin: var(--margin);}
+#titulo    { margin:    var(--margin-h); }
+#titulo h2 { font-size: var(--font); color: #ff0852; }
+#biography { font-size: var(--font); margin: var(--margin-h); }
 
 header,
 #skills,
 #projects,
 #certificates {
+  margin: var(--margin-h);
   border: var(--border);
   border-radius: var(--border-radius);
-  margin: var(--margin);
   background-color: var(--background);
 }
 
@@ -44,23 +49,30 @@ header,
 #container-skills,
 #container-projects,
 #container-certificates {
-  margin: var(--margin-auto);
   width: 90%;
+  margin: var(--margin-auto);
   text-align: center;
 }
 
-/* MOBILE */
+#box-skills,
+#box-projects,
+#box-certificates {
+  margin: var(--margin-h-v);
+  border: var(--border);
+  display: inline-block;
+  padding: var(--padding);
+  border-radius: var(--border-radius-small);
+  background-color: var(--background-bottom);
+}
 
 @media (max-width:800px) {
   body {
     width: 90%;
   }
-
 }
 
-/* CARDS */
-
+/* ICONS */
 /* ul utilizado apenas nos icons */
-ul     {list-style-type: none}
-ul li  {display: inline-block}
-.icons {width: 35px;}
+ul     { list-style-type: none }
+ul li  { display: inline-block }
+.icons { width: 35px; }
