@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+:root {
+  --margin: 25px 0;
+  --margin-auto: 25px auto;
+
+  --border: 1px solid #4d1616;
+  --border-radius: 10px;
+
+  --font: 15px;
+  --font-color: #f8f8f2;
+
+  --background: #1a1212;
+  --background-bottom: #070404;
+}
+
+body {
+  width: 720px;
+  margin: 0 auto;
+  color: var(--font-color);
+  background-color: var(--background-bottom);
+}
+
+#titulo    {margin:    var(--margin);}
+#titulo h2 {font-size: var(--font); color: #ff0852;}
+#biography {font-size: var(--font); margin: var(--margin);}
+
+header,
+#skills,
+#projects,
+#certificates {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  margin: var(--margin);
+  background-color: var(--background);
+}
+
+#container-header,
+#container-skills,
+#container-projects,
+#container-certificates {
+  margin: var(--margin-auto);
+  width: 90%;
+  text-align: center;
+}
+
+/* MOBILE */
+
+@media (max-width:800px) {
+  body {
+    width: 90%;
+  }
+
+}
+
+/* CARDS */
+
+/* ul utilizado apenas nos icons */
+ul     {list-style-type: none}
+ul li  {display: inline-block}
+.icons {width: 35px;}
