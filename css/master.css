@@ -3,12 +3,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Fira Sans', sans-serif;
+  text-decoration: none;
 }
 
 :root {
-  --margin-h: 25px 0;
-  --margin-v: 0 25px;
+  --margin: 20px;
+  --margin-h: 0 25px;
+  --margin-v: 25px 0;
   --margin-h-v: 25px;
+  --margin-box: 5px;
   --margin-auto: 25px auto;
 
   --padding: 25px;
@@ -22,6 +25,8 @@
 
   --background: #1a1212;
   --background-bottom: #070404;
+
+  --color-bold: #ff0852;
 }
 
 body {
@@ -31,15 +36,16 @@ body {
   background-color: var(--background-bottom);
 }
 
-#titulo    { margin:    var(--margin-h); }
-#titulo h2 { font-size: var(--font); color: #ff0852; }
-#biography { font-size: var(--font); margin: var(--margin-h); }
+/* header content */
+#titulo    { margin:    var(--margin-v); }
+#titulo h2 { font-size: var(--font); color: var(--color-bold); }
+#biography { font-size: var(--font); margin: var(--margin-v); }
 
 header,
 #skills,
 #projects,
 #certificates {
-  margin: var(--margin-h);
+  margin: var(--margin-v);
   border: var(--border);
   border-radius: var(--border-radius);
   background-color: var(--background);
@@ -54,10 +60,11 @@ header,
   text-align: center;
 }
 
+
 #box-skills,
 #box-projects,
 #box-certificates {
-  margin: var(--margin-h-v);
+  margin: var(--margin-box);
   border: var(--border);
   display: inline-block;
   padding: var(--padding);
@@ -65,14 +72,70 @@ header,
   background-color: var(--background-bottom);
 }
 
-@media (max-width:800px) {
-  body {
-    width: 90%;
-  }
+h3 {
+  margin: var(--margin-v);
+}
+
+header a {
+  color: var(--font-color);
+  text-decoration: none;
+  font-size: 35px;
+}
+
+header a:hover {
+  color: var(--color-bold);
+  transition: 800ms;
 }
 
 /* ICONS */
 /* ul utilizado apenas nos icons */
 ul     { list-style-type: none }
 ul li  { display: inline-block }
-.icons { width: 35px; }
+
+#container-skills i {
+  padding: 5px;
+  font-size: 50px;
+  color: var(--font-color);
+}
+#container-skills i:hover {
+  color: var(--color-bold);
+  transition: 700ms;
+}
+
+.box-skills {
+  display: inline-block;
+  font-size: 12px;
+}
+
+.box-skills:hover {
+  color: var(--color-bold);
+  transition: 700ms;
+}
+
+.box-skills p {
+  margin-top: 5px;
+}
+
+
+@media (max-width:720px) {
+  body {
+    width: 90%;
+  }
+
+  #container-header,
+  #container-skills,
+  #container-projects,
+  #container-certificates {
+    width: 100%;
+  }
+
+  #box-projects,
+  #box-certificates {
+    margin: var(--margin);
+  }
+
+  .box-skills {
+    margin: var(--margin-box);
+    padding: 10px;
+  }
+}
